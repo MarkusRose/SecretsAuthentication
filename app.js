@@ -1,10 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const secrets = require('./secrets');
 
 mongoose.connect(
-  `mongodb+srv://${secrets.admin}:${secrets.password}@sandbox.diqjrsw.mongodb.net/userTest?retryWrites=true&w=majority`,
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@sandbox.diqjrsw.mongodb.net/userTest?retryWrites=true&w=majority`,
   {}
 );
 
